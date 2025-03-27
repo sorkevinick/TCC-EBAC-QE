@@ -1,0 +1,32 @@
+name: Testes Automatizados - UI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checando repositório
+      uses: actions/checkout@v2
+
+    - name: Configurar Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16'
+
+    - name: Instalar dependências
+      run: npm install
+
+    - name: Rodar testes de UI com Cypress
+      run: npx cypress run  
+
+    - name: Subir relatórios de UI
+      if: success()
+      run: npm run generate-report  
