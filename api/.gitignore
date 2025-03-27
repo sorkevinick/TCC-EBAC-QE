@@ -1,0 +1,30 @@
+# Node.js
+node_modules/
+
+# Dependências do Cypress
+cypress/videos/
+cypress/screenshots/
+
+# Arquivos de log
+*.log
+
+# Arquivos de sessão
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Diretórios de build temporários
+dist/
+build/
+
+# Arquivos de cache do npm
+npm/
+
+# Mochawesome (relatórios de testes)
+mochawesome-report/
+
+# Arquivos do Visual Studio Code
+.vscode/
+
+# Outras configurações ou arquivos específicos
+.env

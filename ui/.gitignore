@@ -1,0 +1,28 @@
+# Node.js
+node_modules/
+
+# Diretório de cache do Cypress
+.cypress/
+
+# Relatórios do Cypress
+cypress/results/
+cypress/screenshots/
+cypress/videos/
+
+# Arquivos de log
+*.log
+
+# Arquivos de sessão
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Arquivos temporários de configuração
+.env
+
+# Arquivos do Visual Studio Code
+.vscode/
+
+# Arquivos de configuração do Cypress
+cypress/plugins/
+cypress/support/

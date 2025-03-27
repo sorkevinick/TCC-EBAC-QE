@@ -1,0 +1,16 @@
+{
+  "name": "mobile",
+  "type": "module",
+  "devDependencies": {
+    "@wdio/allure-reporter": "^9.11.0",
+    "@wdio/cli": "^9.12.1",
+    "@wdio/local-runner": "^9.12.1",
+    "@wdio/mocha-framework": "^9.12.1",
+    "@wdio/spec-reporter": "^9.11.0",
+    "@wdio/visual-service": "^6.3.3",
+    "appium-uiautomator2-driver": "^4.1.4"
+  },
+  "scripts": {
+    "test": "wdio run ./wdio.conf.js"
+  }
+}

@@ -1,0 +1,35 @@
+# Node.js
+node_modules/
+
+# Dependências do WebDriverIO e Appium
+wdio-visual-regression/
+
+# Logs de testes e relatórios do Mocha
+mochawesome-report/
+
+# Arquivos de log
+*.log
+
+# Arquivos de sessão
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Arquivos temporários gerados pelo WebDriverIO
+wdio/
+
+# Arquivos do Visual Studio Code
+.vscode/
+
+# Arquivos de configuração do Appium
+*.appium
+
+# Arquivos de cache
+.cache/
+
+# Arquivos de configuração e build
+dist/
+build/
+
+# Arquivos de configuração sensíveis
+.env

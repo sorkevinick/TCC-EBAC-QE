@@ -1,0 +1,10 @@
+{
+  "validUser": {
+      "username": "kevin-ebac@gmail.com",
+      "password": "ebacebac123456!@#$%¨&*"
+  },
+  "invalidUser": {
+      "username": "usuario@ebac.com",
+      "password": "senhaErrada"
+  }
+}
