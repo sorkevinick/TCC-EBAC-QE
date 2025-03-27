@@ -14,7 +14,7 @@
   },
   "scripts": {
     "test": "mocha tests/cupons.spec.js --reporter mochawesome",
-    "generate-report": "marge mochawesome-report/mochawesome.json --reportDir mochawesome-report"
+    "generate-report": "marge mochawesome-report/mochawesome.json --reportDir mochawesome-report --inline --enableCharts --enableTestCode"
 
   },
   "keywords": [],
