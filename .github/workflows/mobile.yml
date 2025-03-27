@@ -3,26 +3,34 @@ name: Testes Automatizados - Mobile
 on:
   push:
     branches: [ CI/CD ]
+  pull_request:
+    branches: [ CI/CD ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checando repositório
-      uses: actions/checkout@v2
+      - name: Check out code
+        uses: actions/checkout@v2
 
-    - name: Configurar Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '16'
+      - name: Configurar Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
 
-    - name: Instalar dependências
-      run: npm install
+      - name: Instalar dependências (Mobile)
+        run: |
+          cd mobile
+          npm install
 
-    - name: Rodar testes de Mobile
-      run: npm test 
+      - name: Rodar testes Mobile
+        run: |
+          cd mobile
+          npm run test
 
-    - name: Subir relatórios de Mobile
-      if: success()
-      run: npm run generate-report 
+      - name: Subir relatórios de Mobile
+        if: success()
+        run: |
+          cd mobile
+          npm run generate-report

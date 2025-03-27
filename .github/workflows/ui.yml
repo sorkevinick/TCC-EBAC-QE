@@ -3,26 +3,36 @@ name: Testes Automatizados - UI
 on:
   push:
     branches: [ CI/CD ]
+  pull_request:
+    branches: [ CI/CD ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checando repositório
-      uses: actions/checkout@v2
+      - name: Check out code
+        uses: actions/checkout@v2
 
-    - name: Configurar Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '16'
+      - name: Configurar Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
 
-    - name: Instalar dependências
-      run: npm install
+      - name: Instalar dependências (UI)
+        run: |
+          cd ui
+          npm install
 
-    - name: Rodar testes de UI com Cypress
-      run: npx cypress run  
+      - name: Rodar testes de UI
+        run: |
+          cd ui
+          # Se tiver script test no package.json, ajuste
+          # Por exemplo, se usar cypress:
+          npx cypress run
 
-    - name: Subir relatórios de UI
-      if: success()
-      run: npm run generate-report  
+      - name: Subir relatórios de UI
+        if: success()
+        run: |
+          cd ui
+          npm run generate-report
