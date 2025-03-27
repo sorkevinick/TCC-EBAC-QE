@@ -21,13 +21,8 @@ describe('[US-0003] - API de Cupons', () => {
         expect(response.body).to.have.property('id', cupomID);
     });
 
-    function generate3DigitNumber() {
-        return Math.floor(100 + Math.random() * 900);
-    }
-    const random3digits = generate3DigitNumber();
-    const cupomCode = `Ganhe${random3digits}`;
-
     it('CT-011 - Criar um cupom de desconto válido', async () => {
+        const cupomCode = `Ganhe${Date.now()}`;  
         const novoCupom = {
             code: cupomCode,  
             amount: "50",       
@@ -51,6 +46,7 @@ describe('[US-0003] - API de Cupons', () => {
     
     
     it('CT-012 - Criar cupom de desconto com código já existente', async () => {
+        const cupomCode = `Ganhe${Date.now()}`;  
         const cupomDuplicado = {
             code: cupomCode,  
             amount: "10",
