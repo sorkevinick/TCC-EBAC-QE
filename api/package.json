@@ -14,8 +14,8 @@
   },
   "scripts": {
     "test": "mocha tests/cupons.spec.js --reporter mochawesome --reportDir mochawesome-report",
-    "merge-report": "mochawesome-merge mochawesome-report/*.json -o mochawesome-report/merged.json",
-    "generate-report": "npm run merge-report && marge mochawesome-report/merged.json --reportDir mochawesome-report --inline --enableCharts --enableTestCode"
+    "merge-report": "npx mochawesome-merge mochawesome-report/*.json -o mochawesome-report/merged.json",
+    "generate-report": "npm run merge-report && npx marge mochawesome-report/merged.json --reportDir mochawesome-report --inline --enableCharts --enableTestCode"
 
   },
   "keywords": [],
