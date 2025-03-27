@@ -3,7 +3,7 @@ name: Testes Automatizados - API
 on:
   push:
     branches:
-      - main
+      - CI/CD
   pull_request:
     branches:
       - main
