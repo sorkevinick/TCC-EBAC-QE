@@ -1,9 +1,6 @@
 name: Testes Automatizados - API
-
 on:
   push:
-    branches: [ CI/CD ]
-  pull_request:
     branches: [ CI/CD ]
 
 jobs:
@@ -19,20 +16,17 @@ jobs:
         with:
           node-version: '16'
 
-      # Navega até a pasta "api" e instala dependências
-      - name: Instalar dependências (API)
+      - name: Instalar dependências
         run: |
           cd api
           npm install
 
-      # Roda os testes da API
       - name: Rodar testes de API
         run: |
           cd api
           npm test
 
-      # Subir relatórios de API (caso use npm run generate-report)
-      - name: Subir relatórios de API
+      - name: Gerar relatório
         if: success()
         run: |
           cd api
