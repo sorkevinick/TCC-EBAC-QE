@@ -13,9 +13,10 @@
     "mochawesome": "^7.1.3"
   },
   "scripts": {
-    "test": "mocha tests/cupons.spec.js --reporter mochawesome --reportDir mochawesome-report",
+    "test": "mocha tests/*.spec.js --reporter mochawesome --reportDir mochawesome-report",
     "merge-report": "npx mochawesome-merge mochawesome-report/*.json -o mochawesome-report/merged.json",
-    "generate-report": "npm run merge-report && npx marge mochawesome-report/merged.json --reportDir mochawesome-report --inline --enableCharts --enableTestCode"
+    "fix-merged-json": "node scripts/fix-merged-json.js",
+    "generate-report": "npm run merge-report && npm run fix-merged-json && npx marge mochawesome-report/merged.json --reportDir mochawesome-report --inline --enableCharts --enableTestCode"
 
   },
   "keywords": [],
