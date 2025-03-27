@@ -13,7 +13,9 @@
     "mochawesome": "^7.1.3"
   },
   "scripts": {
-    "test": "mocha tests/cupons.spec.js --reporter mochawesome"
+    "test": "mocha tests/cupons.spec.js --reporter mochawesome",
+    "generate-report": "marge mochawesome-report/mochawesome.json --reportDir mochawesome-report"
+
   },
   "keywords": [],
   "author": "",
