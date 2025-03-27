@@ -2,11 +2,7 @@ name: Testes Automatizados - Mobile
 
 on:
   push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+    branches: [ CI/CD ]
 
 jobs:
   build:
