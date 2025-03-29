@@ -3,8 +3,6 @@ name: Testes Automatizados - UI
 on:
   push:
     branches: [ CI/CD ]
-  pull_request:
-    branches: [ CI/CD ]
 
 jobs:
   build:
@@ -17,7 +15,7 @@ jobs:
       - name: Configurar Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '18'  # Cypress 14.2.0 exige Node >= 18
+          node-version: '18' 
 
       - name: Instalar dependências (UI)
         run: |
@@ -28,10 +26,3 @@ jobs:
         run: |
           cd ui
           npx cypress run
-
-
-      - name: Subir relatórios de UI
-        if: success()
-        run: |
-          cd ui
-          npm run generate-report
