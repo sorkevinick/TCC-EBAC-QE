@@ -27,7 +27,8 @@ jobs:
       - name: Rodar testes de UI
         run: |
           cd ui
-          npm test
+          npx cypress run
+
 
       - name: Subir relatórios de UI
         if: success()
